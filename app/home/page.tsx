@@ -1,23 +1,25 @@
 // src/components/HomeScreen.js
 "use client";
-import React, { useState } from "react";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import MenuIcon from "@mui/icons-material/Menu";
+import {
+  default as Settings,
+  default as SettingsIcon,
+} from "@mui/icons-material/Settings";
 import {
   AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
+  Avatar,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Avatar,
+  Toolbar,
+  Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import SettingsIcon from "@mui/icons-material/Settings";
-import Settings from "@mui/icons-material/Settings";
+import { useState } from "react";
 import Post from "../components/post/page";
 
 const HomeScreen = () => {

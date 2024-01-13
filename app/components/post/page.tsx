@@ -1,25 +1,25 @@
 // src/components/Post.js
 "use client";
-import React, { useState } from "react";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import CommentIcon from "@mui/icons-material/Comment";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import SendIcon from "@mui/icons-material/Send";
 import {
+  Avatar,
   Card,
   CardContent,
   CardHeader,
   CardMedia,
-  Avatar,
-  IconButton,
-  Typography,
   Divider,
-  Popover,
+  IconButton,
   List,
   ListItem,
   ListItemText,
+  Popover,
+  Typography,
 } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import CommentIcon from "@mui/icons-material/Comment";
-import SendIcon from "@mui/icons-material/Send";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { useState } from "react";
 
 const Post = ({ username, avatar, photoUrl, likes, comments }) => {
   const [showComments, setShowComments] = useState(false);
@@ -29,7 +29,7 @@ const Post = ({ username, avatar, photoUrl, likes, comments }) => {
     setShowComments(!showComments);
   };
 
-  const handleMoreOptionsClick = (event) => {
+  const handleMoreOptionsClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
 
