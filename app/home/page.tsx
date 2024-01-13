@@ -17,7 +17,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import SettingsIcon from "@mui/icons-material/Settings";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Settings from "@mui/icons-material/Settings";
+import Post from "../components/post/page";
 
 const HomeScreen = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,6 +32,32 @@ const HomeScreen = () => {
     { text: "About", icon: <InfoIcon />, onClick: toggleMenu },
     { text: "Settings", icon: <SettingsIcon />, onClick: toggleMenu },
     // Add more menu items as needed
+  ];
+
+  const posts = [
+    // Array of post objects
+    {
+      username: "JohnDoe",
+      avatar: "https://source.unsplash.com/50x50/?portrait",
+      photoUrl: "https://source.unsplash.com/600x400/?nature",
+      likes: 15,
+      comments: ["Great photo!", "Love it!"],
+    },
+    {
+      username: "JohnDoe2",
+      avatar: "https://source.unsplash.com/50x50/?portrait",
+      photoUrl: "https://source.unsplash.com/600x400/?nature",
+      likes: 15,
+      comments: ["Great photo!", "Love it!"],
+    },
+    {
+      username: "JohnDoe3",
+      avatar: "https://source.unsplash.com/50x50/?portrait",
+      photoUrl: "https://source.unsplash.com/600x400/?nature",
+      likes: 15,
+      comments: ["Great photo!", "Love it!"],
+    },
+    // Add more posts as needed
   ];
 
   return (
@@ -63,7 +90,7 @@ const HomeScreen = () => {
             </Typography>
             {/* Add gear icon for settings */}
             <IconButton color="inherit">
-              <AccountCircleIcon />
+              <Settings />
             </IconButton>
           </div>
         </Toolbar>
@@ -107,14 +134,17 @@ const HomeScreen = () => {
           color: "black",
         }}
       >
-        {/* Your main content goes here */}
+        {/* Your main content goes here
         <Typography variant="h4" gutterBottom>
           Welcome to the Home Screen!
         </Typography>
         <Typography variant="body1">
           Customize this area with your content.
-        </Typography>
+        </Typography> */}
       </div>
+      {posts.map((post, index) => (
+        <Post key={index} {...post} />
+      ))}
     </div>
   );
 };
